@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новорічне Побажання</title>
+  <!-- <a href="home.html">Головна сторінка</a> -->
+  <a href="portal.html">Портал</a>  
+  
+  <style>
+    a {
+      font-size: 30px;
+      color: black;             /* Чорний колір тексту */
+      text-decoration: none;    /* Без підкреслення */
+      position: absolute;       /* Абсолютне позиціонування */
+      top: 0;                   /* Встановлює посилання в верхній частині */
+      left: 50%;                /* Встановлює посилання посередині за горизонталлю */
+      transform: translateX(-50%); /* Трансформація для точного центрування */
+    }
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-image: url('https://cdn.photoroom.com/v2/image-cache?path=gs://background-7ef44.appspot.com/backgrounds_v3/christmas/35_-_christmas.jpg');
+    }
+
+    .container {
+      border: 5px solid #fff;
+      border-radius: 25px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 3s ease;
+      color: #ffcc00;
+      text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+    }
+
+    .message {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #f7f7f7;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .button {
+      padding: 15px 25px;
+      margin-top: 30px;
+      border: none;
+      border-radius: 15px;
+      background-color: #ffcc00;
+      color: #1e3c72;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .button:hover {
+      background-color: #e6b800;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .snowflakes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.7;
+      animation: snow 10s infinite;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      background: #a3d8ff; /* Змінили на блакитний для кращої видимості */
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: drift 10s linear infinite;
+      opacity: 0.9; /* Можна збільшити непрозорість */
+    }
+
+    @keyframes snow {
+      0% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100vw);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="snowflakes">
+    <div class="snowflake" style="left: 20%; animation-duration: 12s;"></div>
+    <div class="snowflake" style="left: 45%; animation-duration: 14s;"></div>
+    <div class="snowflake" style="left: 70%; animation-duration: 16s;"></div>
+    <div class="snowflake" style="left: 85%; animation-duration: 13s;"></div>
+  </div>
+
+  <div class="container">
+    <h1>Новорічне Привітання</h1>
+    <div class="message" id="message">Натискай кнопку для магії!</div>
+    <button class="button" onclick="generateMessage()">Отримати Побажання або Передбачення</button>
+  </div>
+
+  <script>
+    const greetings = [
+      'Бажаємо тобі здоров\'я та безмежного щастя в новому році!',
+      'Нехай цей рік принесе багато нових можливостей для росту!',
+      'Бажаємо здійснення всіх бажань і багато святкових моментів!',
+      'Нехай кожен день буде святом, наповненим радістю!',
+      'Нехай рік буде повний теплих емоцій і нових перемог!',
+      'Бажаємо удачі в кожному починанні та процвітання у всьому!',
+      'Твоя рішучість допоможе тобі досягти неймовірних вершин!',
+      'Бажаємо тобі великих досягнень і незабутніх митей у новому році!',
+      'Нехай буде море чудових новорічних пригод та позитиву!'
+    ];
+
+    const predictions = [
+      'Ти точно зустрінеш щось надзвичайне цього року.',
+      'Очікуй зміни на краще в самий невідповідний час.',
+      'Твоє натхнення цього року буде на піку — будь готовий до великих досягнень!',
+      'Змінюються не тільки дати на календарі, але й твої життєві орієнтири.',
+      'Ти скоро отримаєш важливу новину, яка змінить твої плани на майбутнє.',
+      'Цей рік принесе нові, великі можливості для тебе.',
+      'Твоя рішучість принесе гарний результат вже через кілька місяців.',
+      'Чекай важливих змін, які дозволять тобі досягти всіх твоїх цілей.',
+      'Незабаром прийде момент, який допоможе здійснити твої мрії.'
+    ];
+
+    function generateMessage() {
+      const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+      const randomPrediction = predictions[Math.floor(Math.random() * predictions.length)];
+      document.getElementById("message").innerHTML = `
+        <strong>Привітання:</strong><br>${randomGreeting}<br><br>
+        <strong>Передбачення:</strong><br>${randomPrediction}
+      `;
+      document.getElementById("message").style.animation = "fadeIn 2s ease";
+    }
+  </script>
+</body>
+</html>

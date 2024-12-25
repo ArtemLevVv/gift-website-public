@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новорічний Часовий Портал</title>
+    <a href="home.html">Головна сторінка</a>
+    <style>
+        a {
+            font-size: 30px;
+            color: black;             /* Чорний колір тексту */
+            text-decoration: none;    /* Без підкреслення */
+            position: absolute;       /* Абсолютне позиціонування */
+            top: 0;                   /* Встановлює посилання в верхній частині */
+            left: 50%;                /* Встановлює посилання посередині за горизонталлю */
+            transform: translateX(-50%); /* Трансформація для точного центрування */
+          }
+        body {
+            background-image: url('https://img.freepik.com/free-photo/bokeh-background-perfect-canva_1361-4071.jpg');
+            background-size: cover; /* Зображення розтягується по всьому екрану */
+            background-position: center center; /* Центрування фонового зображення */
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .portal-container {
+            position: relative;
+            margin: 0 auto;
+            width: 70%;
+            height: 280px;
+            background-image: url('https://media.giphy.com/media/3oz8xIa4wXaJWaRH0U/giphy.gif'); /* фон для порталу */
+            background-size: cover;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: portal-effect 1.5s ease-out;
+        }
+        @keyframes portal-effect {
+            0% {transform: scale(0); opacity: 0;}
+            100% {transform: scale(1); opacity: 1;}
+        }
+        .time-travel {
+            font-size: 40px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin-top: 40px;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+            animation: fade-in 1s;
+        }
+        @keyframes fade-in {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        .year-description {
+            font-size: 18px;
+            margin: 20px;
+        }
+        .buttons {
+            margin-top: 40px;
+        }
+        button {
+            font-size: 20px;
+            background-color: #ff6666;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff4040;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ласкаво просимо до Новорічного Часового Порталу!</h1>
+<p>Переміщуйтесь в різні роки святкування Нового року та пригадуйте, як це було!</p>
+
+<div class="portal-container">
+    <div class="time-travel">Часовий портал</div>
+</div>
+
+<div class="content" id="year-2010">
+    <h2>Новорічні події 2010</h2>
+    <div class="year-description">
+        <p>2010 рік! Всі відзначають Новий рік з білими зимовими святами та великою кількістю снігу. Все більше святкувань проходить у кругу родини і близьких друзів.</p>
+        <ul>
+            <li>Популярність старих новорічних фільмів, таких як "Іронія долі".</li>
+            <li>Шаленство з різними рецептами новорічних страв на популярних сайтах.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content" id="year-2015">
+    <h2>Новорічні події 2015</h2>
+    <div class="year-description">
+        <p>2015 рік! Люди обирають нові технології для святкування. У кожному будинку можна побачити сучасні гаджети та нові види розваг для святкових вечорів.</p>
+        <ul>
+            <li>Вітання з використанням відео-смс та відео-листівок.</li>
+            <li>Популярність публікацій в соцмережах під час святкування.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content" id="year-2020">
+    <h2>Новорічні події 2020</h2>
+    <div class="year-description">
+        <p>2020 рік! Світ змінюється через пандемію, але люди все ще відзначають Новий рік вдома за допомогою відеоконференцій з друзями та родиною.</p>
+        <ul>
+            <li>Популярність Zoom-вечірок і онлайн-заходів для святкування.</li>
+            <li>Кожен обирає нові способи святкування в умовах пандемії.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content" id="year-2022">
+    <h2>Новорічні події 2022</h2>
+    <div class="year-description">
+        <p>В 2022 році святкування відбулося з багатьма новими традиціями:</p>
+        <ul>
+            <li>Більше людей почало відзначати Новий рік в онлайн-режимі через обмеження та карантин.</li>
+            <li>У 2022 був тренд на великі домашні святкові марафони через Zoom і подібні платформи.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content" id="year-2023">
+    <h2>Новорічні події 2023</h2>
+    <div class="year-description">
+        <p>2023 рік запам'ятається такими подіями:</p>
+        <ul>
+            <li>Івенти з віртуальними подарунками і бонусами стали масовими.</li>
+            <li>Звичка розпочинати рік з нових досягнень і онлайн-курсі. Міленіали продовжують святкувати на різних платформах.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content" id="year-2024">
+    <h2>Новорічні події 2024</h2>
+    <div class="year-description">
+        <p>Очікуються цікаві події:</p>
+        <ul>
+            <li>Звичай святкування, який поєднує традиції, адаптовані під нові технології.</li>
+            <li>Використання дронів для святкових феєрверків та масові трансляції свят на великих екранах.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="buttons">
+    <button onclick="goToYear('2010')">2010</button>
+    <button onclick="goToYear('2015')">2015</button>
+    <button onclick="goToYear('2020')">2020</button>
+    <button onclick="goToYear('2022')">2022</button>
+    <button onclick="goToYear('2023')">2023</button>
+    <button onclick="goToYear('2024')">2024</button>
+</div>
+
+<script>
+    function goToYear(year) {
+        // Приховуємо всі контенти
+        document.querySelectorAll('.content').forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // Показуємо відповідний контент для вибраного року
+        const content = document.getElementById(`year-${year}`);
+        content.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
